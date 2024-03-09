@@ -13,15 +13,20 @@
 const grid = document.querySelector('#container');
 
 function createGrid() {
-    let a = +prompt('Write your grid size', 0)
+    let a = +prompt('Write your grid size', 16)
     let gridSize = a * a;
     for (let i = 0; i<gridSize; i++) {
         const div = document.createElement('div');
-        div.classList.toggle('div')
+        div.classList.toggle('div');
         grid.appendChild(div);
-        console.log('appendChild')
+        console.log('appendChild');
+        
     }
 }
 
 
+grid.addEventListener('mouseover', () => {
+    const div = document.querySelector('.container > div')
+    div.style.backgroundColor = 'black';
+})
 
