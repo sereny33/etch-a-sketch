@@ -1,32 +1,20 @@
-/* 
-    1. Create grid of divs. (should be evenly spread with flex)
-    2. Input is - mouse hover event Listener
-        each div changes color on hover;   
-    Output is - a sketch
+// fill the container with properly sized squares
+
+const gridContainer = document.querySelector('.container');
+let a = +prompt('Write the grid size', '')
+const gridSize = a*a;
+// calculate proper square size for 500x500 px container
+const squareSize = (Math.sqrt((250000/gridSize))); 
+
+function createGrid(gridSize) {
+    
+    for (i = 0; i<gridSize; i++) {
+        const squareDiv = document.createElement('div');
+        squareDiv.classList.add('squareDiv');
+        squareDiv.style.width = `${squareSize}px`;
+        squareDiv.style.height = `${squareSize}px`;
         
-    3. 'clear' button should return the grid to white.
-
-*/
-
-// Create grid of divs
-
-const grid = document.querySelector('#container');
-
-function createGrid() {
-    let a = +prompt('Write your grid size', 16)
-    let gridSize = a * a;
-    for (let i = 0; i<gridSize; i++) {
-        const div = document.createElement('div');
-        div.classList.toggle('div');
-        grid.appendChild(div);
-        console.log('appendChild');
+        gridContainer.appendChild(squareDiv)
         
     }
 }
-
-
-grid.addEventListener('mouseover', () => {
-    const div = document.querySelector('.container > div')
-    div.style.backgroundColor = 'black';
-})
-
