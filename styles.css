@@ -19,7 +19,7 @@ body {
 }
 
 .squareDiv {
-    background-color: blue;
-    border: 1px solid;
+    background-color: pink;
+    /* border: 1px solid; */
     box-sizing: border-box;
 }
