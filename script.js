@@ -3,8 +3,8 @@
 const gridContainer = document.querySelector('.container');
 let a = +prompt('Write the grid size', '')
 const gridSize = a*a;
-// calculate proper square size for 500x500 px container
-const squareSize = (Math.sqrt((250000/gridSize))); 
+
+const squareSize = (Math.sqrt((250000/gridSize))); // calculate proper square size for 500x500 px container
 const squareDivArray = [];
 function createGrid(gridSize) {
     
@@ -25,3 +25,14 @@ function createGrid(gridSize) {
 }
 
 createGrid(gridSize);
+
+// clear drawing area
+
+const clearBtn = document.querySelector('#clearBtn');
+clearBtn.addEventListener("click", clearArea)
+
+function clearArea() {
+    squareDivArray.forEach((div) => {
+        div.style.background = "pink"
+    })
+}
